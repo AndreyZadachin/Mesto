@@ -8,11 +8,11 @@ export default class Api {
     return fetch(`${this.baseUrl}/users/me`, {
       method: 'GET',
       headers: {
-        authorization: this.token
-      }
+        authorization: this.token,
+      },
     })
-      .then(res => this.responce(res))
-      .catch(err => {
+      .then((res) => this.responce(res))
+      .catch((err) => {
         throw err;
       });
   }
@@ -21,12 +21,11 @@ export default class Api {
     return fetch(`${this.baseUrl}/cards`, {
       method: 'GET',
       headers: {
-        authorization: this.token
-      }
+        authorization: this.token,
+      },
     })
-
-      .then(res => this.responce(res))
-      .catch(err => {
+      .then((res) => this.responce(res))
+      .catch((err) => {
         throw err;
       });
   }
@@ -36,15 +35,15 @@ export default class Api {
       method: 'PATCH',
       headers: {
         authorization: this.token,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name: name,
-        about: about
-      })
+        about: about,
+      }),
     })
-      .then(res => this.responce(res))
-      .catch(err => {
+      .then((res) => this.responce(res))
+      .catch((err) => {
         throw err;
       });
   }
